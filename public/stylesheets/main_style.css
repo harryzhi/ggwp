@@ -1,0 +1,12 @@
+#myCarousel {
+    margin-top:30px;
+    margin-bottom:100px;
+    max-height: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+#myCarousel img {
+    height: 890px;
+    width: 700px;
+}

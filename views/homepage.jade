@@ -1,0 +1,81 @@
+extends layout
+
+append CSS
+	link(rel='stylesheet', href='/stylesheets/homepage_style.css')
+
+
+block pageNav
+	.container-fluid
+		nav.navbar.navbar-default.navbar-static-top( role="navigation" )
+			.navbar-header
+				button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-inverse", aria-expanded="false", aria-controls="navbar")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar 
+			#navbar-inverse.collapse.navbar-collapse
+				ul.nav.navbar-nav
+					li.active: a(href='/') About
+					li: a(href="#team") Team
+					li: a(href="#contact") Contact 
+				form.navbar-form.navbar-right
+					a.button.btn.btn-default(href='/register') Sign up
+				form.navbar-form.navbar-right.form(role='form', action="/",method="post")
+					.form-group
+						input.form-control(type='text', name='username', placeholder='Username')
+					.form-group
+						input.form-control(type='password', name='password', placeholder='Password')
+					button.btn.btn-default(type='submit') Login
+block errorMessage
+	.container-fluid
+		-if(message && message.length>0)
+			.alert.alert-danger #{message}
+block pageCarousel
+	.container-fluid
+		#myCarousel.carousel.slide(data-ride='carousel', data-interval=4000)
+			.carousel-inner(role='listbox')
+				.item
+					.container-fluid
+						img.img-responsive.center-block.first-slide(src=projs[projs.length-3].cover, alt='First slide')
+				.item.active
+					.container-fluid
+						img.img-responsive.center-block.second-slide(src=projs[projs.length-1].cover, alt='Second slide')
+				.item
+					.container-fluid
+						img.img-responsive.center-block.third-slide(src=projs[projs.length-2].cover, alt='Third slide')
+block pageAbout
+	#pageAbout.container-fluid
+		.row
+			.col-lg-4
+				img.img-circle(src='http://orig07.deviantart.net/31b6/f/2015/223/2/6/penguin_by_kjlbs-d959c11.jpg', alt='Generic placeholder image', height='140', width='140')
+				h2 Create Comics
+				p
+					| Start your own comic! Simply make a new comic, give it a working title,description, genre, and cover page, then start editing pages to create a dynamic storyline. 
+			.col-lg-4
+				img.img-circle(src='https://pixabay.com/static/uploads/photo/2013/07/13/10/13/boxing-156810_960_720.png', alt='Generic placeholder image', height='140', width='140')
+				h2 Collaborate
+				p
+					| Your projects are open to other contributors, allowing them to add in their own pages as well, creating a spontaneous collaboration of ideas!
+			.col-lg-4
+				img.img-circle(src='http://images.all-free-download.com/images/graphiclarge/magician_and_floating_lady_clip_art_18524.jpg', alt='Generic placeholder image', height='140', width='140')
+				h2 Join Social Creativity
+				p
+					| You are allowed to make add in your own pages into other contributors comics as well, have your say and share your creativity with the GGWP community.
+		.row
+			.col-lg-4
+				img.img-circle(src='http://cache3.asset-cache.net/xc/472297100.jpg?v=2&c=IWSAsset&k=2&d=heoOBEb43wFeL0nEdFZ8bJ-IKtXWgx_StAHJirrtizh9QRqbpiMf5AJJD1Afia6h0', alt='Generic placeholder image', height='140', width='140')
+				h2 Collect Favourites
+				p
+					| Save all your favourite comics into your profile, and share your unique tastes with the community!
+			.col-lg-4
+				img.img-circle(src='http://1.bp.blogspot.com/-TiMYCNdH5Xg/T5gHogDVmRI/AAAAAAAAB-M/a9mF_aizkZQ/s1600/Phone-lady-Retro-Image-Graphics-Fairy1.jpg', alt='Generic placeholder image', height='140', width='140')
+				h2 Start Discussions
+				p
+					| Start a discussion! Post to profiles, comics, and pages: Share your ideas, critiques, likes, and stories. Your voice matters, and we want to hear what you have to say!
+			.col-lg-4
+				img.img-circle(src='https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/12093801_428067794048632_1554736956_n.jpg', alt='Generic placeholder image', height='140', width='140')
+				h2 Discover
+				p
+					| Find a complex and unique blend of storylines and comics by browsing, searching, and exploring different genres.
+
+block content

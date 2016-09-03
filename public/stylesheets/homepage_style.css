@@ -1,0 +1,32 @@
+#myCarousel {
+    margin-top:30px;
+    margin-bottom:100px;
+    max-height: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+#myCarousel img {
+    height: 450px;
+    width: 700px;
+}
+
+ol.carousel-indicators {
+	height: 0;
+	width: 0;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+}
+
+#pageAbout .col-lg-4 {
+	text-align: center;
+}
+
+#pageAbout .col-lg-4 p{
+	color: #909090;
+}
+
+#pageAbout img {
+	color: white;
+}

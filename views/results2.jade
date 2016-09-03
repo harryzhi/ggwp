@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}  
+    .container-fluid
+  div
+    each user in locals.results
+      div
+        a(href= ../user/user.username)=user.username
+        

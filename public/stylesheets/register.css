@@ -1,0 +1,54 @@
+#title {
+	text-align: center;
+}
+
+#register_form {
+	max-width:500px;
+	padding-top: 15px;
+	text-align: center;
+	width: 55%;
+}
+
+#profile_pic_input {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#password_form {
+	margin-left: 20.5%;
+}
+
+#user_password {
+	margin-bottom: 20px;
+}
+
+#text_type_info {
+	padding-top: 35px;
+}
+
+#dob_col1 {
+	margin-left: 21%;
+}
+
+#dob_col2 {
+}
+
+#dob_col3 {
+}
+
+#dob_row {
+	padding: 0px;
+}
+
+#dob_form {
+	margin-bottom: 25px;
+}
+
+#text_type_info {
+	margin-bottom: 0px;
+}
+
+#checkbox_confirm {
+	margin-top: 35px;
+}

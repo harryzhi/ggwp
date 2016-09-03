@@ -1,0 +1,62 @@
+extends layout
+
+block content
+	.container-fluid
+		doctype html
+		html
+				head
+				meta(charset='utf-8')
+				meta(name='viewport', content='width=device-width, maximum-scale=1')
+				title Search Results
+				link(href='/stylesheets/simplePagination.css', type='text/css', rel='stylesheet')
+		body
+			
+			a.btn.btn-info(href='/results/rate/#{search}', role='button') Rating
+			a.btn.btn-info(href='/results/alpha/#{search}', role='button') Alphabetical
+			a.btn.btn-info(href='/results/reversed/#{search}', role='button') Reverse
+			h1 Uploads
+			#pagination-1
+			table#content-1
+				tbody
+					each upload in locals.uploads
+							tr
+									h3
+												td
+															a(href='/viewing/#{upload._id}')=upload.title
+		
+			h1 Contributors
+			#pagination-2
+			table#content-2
+				tbody
+					each contrib in locals.contribs
+							tr
+									h3
+												td
+															a(href='/user/#{contrib.username}')=contrib.username
+
+			script(src='/javascripts/jquery-1.10.2.min.js')
+			script(src='/javascripts/jquery.simplePagination.js')
+			script(src='/javascripts/pagination.js')
+
+//- extends layout
+//- 
+//- block content
+//- 	.container-fluid
+//- 		h1 Search Results:
+//- 			.container-fluid#buttons
+//- 				a.btn.btn-info(href='/results/rate/#{search}', role='button') Rating
+//- 		div
+//- 			h2 Uploads
+//- 				each upload in locals.uploads
+//- 						h3
+//- 							a(href='/viewing/#{upload._id}')=upload.title
+//- 		div
+//- 			h2 Contributors
+//- 				each contrib in locals.contribs
+//- 						h3
+//- 							a(href='/user/#{contrib.username}')=contrib.username
+//- 		div
+//- 			h2 Viewers
+//- 				each viewer in locals.viewers
+//- 						h3
+//- 							a(href='/user/#{viewer.username}')=viewer.username

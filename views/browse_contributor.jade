@@ -1,0 +1,34 @@
+extends layout
+
+block content
+	.container-fluid#grid_imgs
+		doctype html
+		html
+				head
+				meta(charset='utf-8')
+				meta(name='viewport', content='width=device-width, maximum-scale=1')
+				title Search Results
+				link(href='/stylesheets/simplePagination.css', type='text/css', rel='stylesheet')
+		body
+			
+			a.btn.btn-info(href='/browse/contributors/alpha', role='button') Alphabetical
+			h1 Contributors
+			#pagination-1
+			table#content-1
+				tbody
+					each acc in locals.accs
+							tr
+									h3
+												td
+													a(href='/user/#{acc.username}')=acc.username
+														div
+														img.img-thumbnail(src=acc.picture)
+														div
+												
+													
+	
+
+
+			script(src='/javascripts/jquery-1.10.2.min.js')
+			script(src='/javascripts/jquery.simplePagination.js')
+			script(src='/javascripts/pagination.js')

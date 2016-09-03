@@ -1,0 +1,49 @@
+#title {
+	text-align: center;
+	padding-left:15px;
+}
+
+#project_form {
+	padding-top: 15px;
+}
+
+#text_input {
+	margin-left: 0px;
+	padding-right: 20px;
+}
+
+#image_input {
+	padding-left: 20px;
+	margin-right: 0px;
+}
+
+#genre {
+	margin-bottom: -10px;
+}
+
+#create_btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #333;
+	background-color: #fff;
+	border-color: #ccc;
+    border-top-color: rgb(204, 204, 204);
+    border-right-color: rgb(204, 204, 204);
+    border-bottom-color: rgb(204, 204, 204);
+    border-left-color: rgb(204, 204, 204);
+}

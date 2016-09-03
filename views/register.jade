@@ -1,0 +1,84 @@
+extends layout
+
+append CSS
+	link(rel='stylesheet', href='/stylesheets/register.css')
+	link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css')
+
+block pageNav
+	.container-fluid
+		nav.navbar.navbar-default.navbar-static-top( role="navigation" )
+			.navbar-header
+				button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-inverse", aria-expanded="false", aria-controls="navbar")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar 
+			#navbar-inverse.collapse.navbar-collapse
+				ul.nav.navbar-nav
+					li.active: a( href='/') About
+					li: a( href="#team" ) Team
+					li: a( href="#contact" ) Contact 
+block errorMessage
+	.container-fluid
+		-if(info && info.length>0)
+			.alert.alert-danger #{info}
+block content
+	h1#title= title
+	.container#register_form
+		form#formRegister(name="register",method="post",action="/register", enctype='multipart/form-data')
+			fieldset.form-group
+				label(for='username') Username 
+				input#username.form-control(type='text', placeholder='Enter username', name="username", required)
+			fieldset.form-group
+				label Password
+				br
+				.col-xs-7#password_form
+					input#user_password.form-control(type='password', placeholder='Password', name="userpassword", required)
+					input#confirm_password.form-control(type='password', placeholder='Confirm Password', name="confirmpassword", required)
+			fieldset.form-group
+				label(for='email') Email Address
+				input#email.form-control(type='email', placeholder='Enter email', name="useremail", required)
+			fieldset.form-form#dob_form
+					label Date of Birth
+					br
+					.row#dob_row
+						.col-xs-2#dob_col1
+							input#dob_DD.form-control(type='text', placeholder='DD', name="dob_DD", required)
+						.col-xs-2#dob_col2
+							input#dob_MM.form-control(type='text', placeholder='MM', name="dob_MM", required)
+						.col-xs-3#dob_col3
+							input#dob_YYYY.form-control(type='text', placeholder='YYYY', name="dob_YYYY", required)
+			fieldset.form-group#bio_form-group
+				label(for='bio') Tell us about yourself
+				textarea#bio.form-control(rows='4', name='bio', required)
+			fieldset.form-group
+				label Choose your profile photo
+				br
+				.fileinput.fileinput-new(data-provides='fileinput')#profile_pic
+					.fileinput-preview.thumbnail(data-trigger='fileinput', style='width: 200px; height: 250px;')
+					div
+						span.btn.btn-default.btn-file
+							span.fileinput-new Select image
+							span.fileinput-exists Change
+							input(type='file', name='pic')
+						a.btn.btn-default.fileinput-exists(href='#', data-dismiss='fileinput') Remove
+				br
+			label#text_type_info 
+				|Would you like to be a Viewer, or a Contributor? 
+				br
+				small.text-muted
+					|Currently this decision cannot be changed once made.
+			.radio#radio_input_viewer
+				label
+					input#input_viewer(type='radio', name='usertype', value='Viewer', required)
+					|       Viewer
+			.radio#radio_input_contributor
+				label
+					input#input_contributor(type='radio', name='usertype', value='Contributor', required)
+					|       Contributor
+			.checkbox#checkbox_confirm
+				label
+					input(type='checkbox', required)
+					|  I confirm the above information is correct.
+			button.btn.btn-primary(type='submit')#btn_submit Submit
+			a.button.btn.btn-default(href='/')#btn_cancel Cancel

@@ -1,0 +1,79 @@
+extends layout
+
+append CSS
+	link(rel='stylesheet', href='/stylesheets/main_style.css')
+
+block content
+	.container-fluid
+		h1#top_proj
+			span.glyphicon.glyphicon-star 
+			span.glyphicon.glyphicon-star
+			span.glyphicon.glyphicon-star
+			span.glyphicon.glyphicon-star
+			span.glyphicon.glyphicon-star
+	.container-fluid
+		#myCarousel.carousel.slide(data-ride='carousel', data-interval=4000)
+			.carousel-inner(role='listbox')
+				.item
+					.container-fluid
+						a(href='/viewing/#{projs[2]._id}')
+							img.img-responsive.center-block.first-slide(src=projs[2].cover, alt='First slide')
+				.item.active
+					.container-fluid
+						a(href='/viewing/#{projs[0]._id}')
+							img.img-responsive.center-block.second-slide(src=projs[0].cover, alt='Second slide')
+				.item
+					.container-fluid
+						a(href='/viewing/#{projs[1]._id}')
+							img.img-responsive.center-block.third-slide(src=projs[1].cover, alt='Third slide')
+
+	.container-fluid#grid_imgs
+		h1#rec_proj Recent Comics
+		.row-fluid
+			.crop
+				.col-md-3
+					a(href='/viewing/#{projs[projs.length-1]._id}')
+						img.img-thumbnail(src=projs[projs.length-1].cover)
+				.col-md-3
+					a(href='/viewing/#{projs[projs.length-2]._id}')
+						img.img-thumbnail(src=projs[projs.length-2].cover)
+				.col-md-3
+					a(href='/viewing/#{projs[projs.length-3]._id}')
+						img.img-thumbnail(src=projs[projs.length-3].cover)
+				.col-md-3
+					a(href='/viewing/#{projs[projs.length-4]._id}')
+						img.img-thumbnail(src=projs[projs.length-4].cover)
+
+		.row-fluid
+			.crop
+				.col-md-3
+					a(href='/viewing/#{projs[projs.length-5]._id}')
+						img.img-thumbnail(src=projs[projs.length-5].cover)
+				.col-md-3
+					a(href='/viewing/#{projs[projs.length-6]._id}')
+						img.img-thumbnail(src=projs[projs.length-6].cover)
+				.col-md-3
+					a(href='/viewing/#{projs[projs.length-7]._id}')
+						img.img-thumbnail(src=projs[projs.length-7].cover)
+				.col-md-3
+					a(href='/viewing/#{projs[projs.length-8]._id}')
+						img.img-thumbnail(src=projs[projs.length-8].cover)
+
+		.row-fluid
+			.crop
+				.col-md-3
+					a(href='/viewing/#{projs[projs.length-9]._id}')
+						img.img-thumbnail(src=projs[projs.length-9].cover)
+				.col-md-3
+					a(href='/viewing/#{projs[projs.length-10]._id}')
+						img.img-thumbnail(src=projs[projs.length-10].cover)
+				.col-md-3
+					a(href='/viewing/#{projs[projs.length-11]._id}')
+						img.img-thumbnail(src=projs[projs.length-11].cover)
+				.col-md-3
+					a(href='/viewing/#{projs[projs.length-12]._id}')
+						img.img-thumbnail(src=projs[projs.length-12].cover)				
+
+	br
+	br
+

@@ -1,0 +1,29 @@
+extends layout
+
+append CSS
+    link(rel='stylesheet', href='/stylesheets/profile_style.css')
+    link(rel='stylesheet', href='/stylesheets/profile_v_style.css')
+
+block content
+    .container-fluid
+        .container-fluid#profile_h
+            h1#username_h #{B_username}
+                small.text-muted#usertype_h #{B_userType}.
+        .container-fluid#bio
+            h3 You are now viewing #{B_username}'s profile
+        .container-fluid#img_gallery
+            - if (B_userType == "Viewer") {
+                h3 You will be able to view #{B_username}'s favorites over here once I figure out how to link user accounts to favourites
+                -}
+             - if (B_userType == "Contributor") {
+                h1 #{B_username}'s Recent Uploads
+                .row
+                    ul 
+                        each proj, i in projects
+                            .col-md-3
+                                a(href='/viewing/#{proj._id}')
+                                    img.img-thumbnail(src=proj.cover)
+                -}
+
+
+

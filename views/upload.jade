@@ -1,0 +1,22 @@
+extends layout
+
+block content
+ .container-fluid
+   h1= title
+   p   We can't wait to see what you made!
+     .container-fluid
+      form(action='/upload', method='post', enctype='multipart/form-data')
+        input(type='text', name='title', placeholder='Project Title', required)
+        br
+        input(type='file', name='file')
+        br
+        | Choose a category below that your comic belongs to!
+        br
+        input(type='radio', name='category', value='action', required)
+        | Action
+        br
+        input(type='radio', name='category', value='funny', required)
+        | Funny
+        br
+        input(type='submit', name='submit', value='Upload')
+

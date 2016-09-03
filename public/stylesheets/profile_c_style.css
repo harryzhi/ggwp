@@ -1,0 +1,29 @@
+body {
+	padding: 50px;
+  	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  	color: #00B7FF;
+}
+
+#profile_h {
+
+}
+
+#username_h {
+	font-size: 70px;
+}
+
+#usertype_h {
+	font-size: 20px;
+}
+
+#bio {
+	width: 30%;
+	margin-left: 0px;
+}
+
+#recent_projects {
+	margin-top: 40px;
+}

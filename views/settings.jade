@@ -1,0 +1,40 @@
+extends layout
+
+append CSS
+	link(rel='stylesheet', href='/stylesheets/settings_account.css')
+
+block content
+	.container-fluid#settings
+		h1#title Manage Your Account Settings Here
+		br
+		form(name="settings", method="post", action="/settings")
+			.col-md-3#acc_info
+				h4 Your Account Information
+				.container-fluid#acc_text
+					| Username| #{user.username}
+					div
+					| Email| #{user.email}
+					div
+					| Type| #{user.userType}
+			.col-md-4#change_pass
+				div
+				| Change Password:
+				br
+				input#change_pass_form.form-control(type='text', placeholder='Enter New Password', name="password")
+				div
+					.submit_btn
+						button.btn.btn-primary(type='submit')#btn_submit Submit
+						a.button.btn.btn-default(href='/main')#btn_cancel Cancel
+					.container-fluid
+					.delete_acc_btn
+						a.button.btn.btn-default(href='/delete/#{user._id}') Delete Account
+	.container-fluid#blacklist
+		h1#title2 Manage Your Blacklist
+		br
+		div
+			each acc in blacklist
+				h3
+					a(href='/user/#{acc}')
+						| #{acc}
+						ul
+						a.button.btn.btn-default(href='/blacklist/remove/#{acc}') Remove

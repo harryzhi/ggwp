@@ -1,0 +1,53 @@
+extends layout
+
+append CSS
+	link(rel='stylesheet', href='/stylesheets/profile_style.css')
+
+block content
+	.container-fluid
+		.container-fluid#profile_h
+			.row
+				.col
+					.col-md-6#profile_pic
+						img.img-thumbnail(src=user_o.picture)
+					.col-md-5#username_h_bio
+						h1#username_h #{B_username} 
+							- if (B_userType == "Viewer") {
+							small.text-muted
+								span.glyphicon.glyphicon-eye-open 
+							-}
+							- if (B_userType == "Contributor") {
+							small.text-muted
+								span.glyphicon.glyphicon-pencil 
+							-}
+							- if (B_username != user.username && B_userType == "Contributor" && user.blacklist.indexOf(B_username) < 0) {
+								a.btn.btn-info(href='/blacklist/#{B_username}', role='button') Blacklist
+							-}
+						h3 #{user_o.bio}
+		.container-fluid
+			- if (B_userType == "Contributor") {
+			h1#comics_h #{B_username}'s Comics
+			.row-fluid#comic_gallery
+				ul
+					- each proj, pg in projects
+						- if ((pg % 4 == 0))
+							.row-fluid#img_gallery
+								- each cover, i in projects.slice(pg, pg+4)
+									.crop
+										.col-md-3
+											p
+											a(href='/viewing/#{projects[pg+i]._id}')
+												img.img-thumbnail(src=projects[pg+i].cover)
+			-}
+			h1 My Favourites
+			.row-fluid#comic_gallery
+				ul
+					- each fav, pg in favourites
+						- if ((pg % 4 == 0))
+							.row-fluid#img_gallery
+								- each cover, i in favourites.slice(pg, pg+4)
+									.crop
+										.col-md-3
+											p
+											a(href='/viewing/#{favourites[pg+i]._id}')
+												img.img-thumbnail(src=favourites[pg+i].cover)

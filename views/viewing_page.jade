@@ -1,0 +1,24 @@
+extends layout
+
+append CSS
+	link(rel='stylesheet', href='/stylesheets/viewing_page.css')
+
+block content
+		.container-fluid
+			#page_image
+				img(src=page.image)
+		.container-fluid#contr_info
+				small.text-muted  
+					p#contr_title "#{page.title}"
+					#contr_username
+						a(href='/user/#{page.username}') #{page.username}
+		.container-fluid#buttons
+			- if (page.prev) {
+			a.button.btn.btn-default(href='/viewing/page/#{page.prev._id}') Prev
+			-}
+			a.button.btn.btn-default(href='/rate/page/#{page._id}') Likes: #{page.rating}
+			- if (page.next) {
+			a.button.btn.btn-default(href='/viewing/page/#{page.next._id}') Cont
+			-}
+			
+

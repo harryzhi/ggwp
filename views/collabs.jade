@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	.container-fluid
+		h1 My Collaborations
+			.row-fluid#comic_gallery
+				ul
+					- each page, pg in collabs
+						- if ((pg % 4 == 0))
+							.row-fluid#img_gallery
+								- each cover, i in collabs.slice(pg, pg+4)
+									.crop
+										.col-md-3
+											p
+											a(href='/viewing/page/#{collabs[pg+i]._id}')
+												img.img-thumbnail(src=collabs[pg+i].image)
+												| Collaborated to #{collabs[pg+i].project_name} by: #{collabs[pg+i].project_author}

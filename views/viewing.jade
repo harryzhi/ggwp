@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	.container-fluid
+		h1 #{project.title}
+		.container-fluid
+		img.img-thumbnail(src=project.cover)
+		br
+		h2 By: 
+			a(href='/user/#{project.username}') #{project.username}
+		h3 Description: #{project.description}
+		h4 Likes: #{project.rating}
+	.container-fluid
+		a.button.btn.btn-default(href='/rate/#{project._id}') Like

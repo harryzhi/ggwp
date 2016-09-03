@@ -1,0 +1,15 @@
+extends layout
+
+append CSS
+	link(rel='stylesheet', href='/stylesheets/profile_v_style.css')
+
+block content
+	.container-fluid
+		.container-fluid#profile_h
+			.row
+				.col-md-4
+					img.img-thumbnail(src=user.picture)
+				h1#username_h #{user.username} 
+					small.text-muted
+						span.glyphicon.glyphicon-eyeo-open
+				h3 #{user.bio}

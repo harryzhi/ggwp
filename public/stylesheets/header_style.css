@@ -1,0 +1,21 @@
+.jumbotron {
+	min-width: 1078px;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+}
+
+.jumbotron h1 {
+	min-width: 1078px;
+	padding: 0;
+	margin-top: -20px;
+	margin-bottom: -20px;
+	font-family: "Comic Sans", Times, serif;
+	font-size: 100px;
+}
+
+.jumbotron small {
+	min-width: 1078px;
+	margin-left: -12px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}

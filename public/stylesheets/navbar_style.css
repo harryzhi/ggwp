@@ -1,0 +1,11 @@
+nav {
+	min-width: 1078px;
+	margin: 0;
+}
+
+#vert {
+	height: 50px;
+	margin: 0 9px;
+	border-left: 2px solid #F2F2F2;
+	border-right: 2px solid #FFF;
+}
